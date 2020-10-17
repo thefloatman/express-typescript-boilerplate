@@ -1,21 +1,20 @@
 import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
+import userRouter from "./routers/user.router"
 
 const app = express();
 const port = 3000;
 
-// Where we will keep books
-let books = [];
-
+// Middleware
 app.use(cors());
-
-// Configuring body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.json("welcome to home");
 });
+
+app.use("/user", userRouter);
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));

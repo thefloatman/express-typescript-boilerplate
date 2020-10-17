@@ -4,8 +4,7 @@ import { Request, Response } from "express";
 
 class UserController {
   getAllUsers(req: Request, res: Response) {
-    const users = getRepository(User).find();
-    res.json(users);
+    return getRepository(User).find();
   }
 }
 

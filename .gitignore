@@ -1,6 +1,7 @@
-# folders
-/node_modules
-/dist
-
-# files
-.env
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+dist/

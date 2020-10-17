@@ -1,6 +1,6 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+import express from "express"
+import bodyParser from "body-parser"
+import cors from "cors"
 
 const app = express();
 const port = 3000;
@@ -15,9 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.json("welcome to home")
+  res.json("welcome to home");
 });
 
-app.listen(port, () =>
-  console.log(`app listening on port ${port}!`)
-);
+app.listen(port, () => console.log(`app listening on port ${port}!`));

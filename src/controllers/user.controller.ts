@@ -1,11 +1,13 @@
-import { User }  from '../models/user.model';
-import { getRepository } from "typeorm";
+import express from "express"
 import { Request, Response } from "express";
+import { AllUsersResponse } from "../interfaces/responses/user.response";
+import UserService from "../services/user.service"
 
-class UserController {
-  getAllUsers(req: Request, res: Response) {
-    return getRepository(User).find();
-  }
-}
+const router = express.Router();
 
-export default new UserController();
+router.get("/", async (req: Request, res: Response) => {
+  let result: AllUsersResponse = await UserService.findAll();
+  res.json(result);
+});
+
+export default router

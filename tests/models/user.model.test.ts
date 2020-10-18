@@ -1,5 +1,5 @@
-import { getRepository } from "typeorm";
 import connection from "../../src/utils/connection";
+import { getRepository } from "typeorm";
 import { User } from "../../src/models/user.model";
 
 describe("User Model", () => {

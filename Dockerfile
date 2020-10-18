@@ -1,5 +1,7 @@
 FROM node:12.14.1-slim
 
+MAINTAINER whitequbits
+
 # Create work directory
 WORKDIR /usr/src/app
 

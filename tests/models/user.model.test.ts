@@ -4,6 +4,7 @@ import { User } from "../../src/models/user.model";
 
 describe("User Model", () => {
   const user = new User();
+  user.userName = "timber123";
   user.firstName = "Timber";
   user.lastName = "Saw";
   user.email = "timber@gmail.com";
@@ -17,7 +18,7 @@ describe("User Model", () => {
     await connection.close();
   });
 
-  beforeEach(async () => {
+  afterEach(async () => {
     await connection.clear();
   });
 

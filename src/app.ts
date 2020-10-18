@@ -11,6 +11,7 @@ createConnection()
   .then(async () => {
     const app = express();
     const port = 3000;
+    require("dotenv").config();
 
     // Middleware
     app.use(cors());

@@ -1,7 +1,7 @@
 import { User }  from '../models/user.model';
 import { getRepository } from "typeorm";
 
-class UserController {
+class UserService {
   async findAll() {
     return await getRepository(User).find({
       select: ["id","firstName", "lastName"],
@@ -9,4 +9,4 @@ class UserController {
   }
 }
 
-export default new UserController();
+export default new UserService();

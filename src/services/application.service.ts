@@ -1,10 +1,8 @@
 import { User } from "../models/user.model";
 import { getRepository } from "typeorm";
-import LoginRequest from "../interfaces/requests/login.request";
-import SignUpRequest from "../interfaces/requests/signup.request";
 
-class ApplicationController {
-  async login(requestBody: LoginRequest) {
+class ApplicationService {
+  async login(requestBody: any) {
     let currentUser = await getRepository(User).findOne({ email: requestBody.email });
 
     if (currentUser && currentUser.comparePassword(requestBody.password)) {
@@ -14,7 +12,7 @@ class ApplicationController {
     }
   }
 
-  async signUp(requestBody: SignUpRequest) {
+  async signUp(requestBody: any) {
     const newUser = getRepository(User).create(
       requestBody
     );
@@ -23,4 +21,4 @@ class ApplicationController {
   }
 }
 
-export default new ApplicationController();
+export default new ApplicationService();
